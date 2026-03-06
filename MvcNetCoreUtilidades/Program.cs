@@ -1,4 +1,5 @@
 using MvcNetCoreUtilidades.Helpers;
+using MvcNetCoreUtilidades.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,7 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDistributedMemoryCache();
 //Esto es para recoger el nombre del server y el puerto para crear la url de los ficheros subidos
 builder.Services.AddHttpContextAccessor();
+builder.Services.AddTransient<RepositoryCoches>();
 builder.Services.AddScoped<HelperPathProvider>();
 //Habilitamos session
 builder.Services.AddSession();

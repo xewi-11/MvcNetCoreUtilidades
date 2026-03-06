@@ -6,11 +6,24 @@
 
                 $("#containercoches").load("/Coches/_CochesPartial")
             })
-        })
+            $("#btnCargarCoche").click(function(){
+                var idcoche = $("#cajaid").val();
+                //LALAMAMOS AL CONTROLLER Y AL IACTIONRESULT
+                $("#resultadoBusqueda").load("/Coches/_CocheDetails?idcoche="+idcoche)
+            })
+        })      
     </script>
 }
 
 <h2>Index de Ajax con coches</h2>
+
+
+<label>Introduzca Id Coche:</label>
+<input type="text" id="cajaid" class="form-control"/>
+<button id="btnCargarCoche" class="btn btn-primary">Buscar Coche</button>
+<div id="resultadoBusqueda" style="background-color:lightgoldenrodyellow"></div>
+
+
 
 <button id="btnCargarDatos" class="btn btn-warning">Cargar Datos</button>
 
