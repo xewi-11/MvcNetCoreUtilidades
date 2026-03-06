@@ -1,0 +1,17 @@
+﻿@section Scripts{
+    <script>
+        $(document).ready(function(){
+            $("#btnCargarDatos").click(function(){
+                //LALAMAMOS AL CONTROLLER Y AL IACTIONRESULT
+
+                $("#containercoches").load("/Coches/_CochesPartial")
+            })
+        })
+    </script>
+}
+
+<h2>Index de Ajax con coches</h2>
+
+<button id="btnCargarDatos" class="btn btn-warning">Cargar Datos</button>
+
+<div id="containercoches" style="background-color: lightgreen;"></div>
